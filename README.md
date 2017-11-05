@@ -1,4 +1,4 @@
-## Template React
+## Template React + Redux + SSR
 
 - Bootstrapped with Create React App
 - React-router

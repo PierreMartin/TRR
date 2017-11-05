@@ -1,7 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import image from '@image/cat.jpg';
 import ModuleX from './moduleX/moduleX';
+import { connect } from 'react-redux';
 
 class HomePage extends React.Component {
 	constructor(props) {
@@ -75,4 +76,14 @@ HomePage.propTypes = {
 };
 */
 
-export default HomePage;
+HomePage.propTypes = {
+	courses: PropTypes.array
+};
+
+const mapStateToProps = (state) => {
+	return {
+		courses: state.courses
+	};
+};
+
+export default connect(mapStateToProps, null)(HomePage);

@@ -4,7 +4,10 @@
   "private": true,
   "jest": {
     "verbose": true,
-    "setupFiles": ["./shim.js", "./setup.js"]
+    "setupFiles": [
+      "./shim.js",
+      "./setup.js"
+    ]
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
@@ -13,9 +16,11 @@
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.14"
+    "react-scripts": "1.0.14",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",

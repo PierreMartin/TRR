@@ -17,6 +17,8 @@ class HomePage extends React.Component {
 	}
 
 	componentDidMount() {
+		const { courses } = this.props;
+		console.log(courses);
 		// this.log('componentDidMount');
 	}
 
@@ -77,7 +79,7 @@ HomePage.propTypes = {
 */
 
 HomePage.propTypes = {
-	courses: PropTypes.array
+	courses: PropTypes.arrayOf.isRequired
 };
 
 const mapStateToProps = (state) => {

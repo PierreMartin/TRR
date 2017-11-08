@@ -33,6 +33,8 @@
 		"import/no-extraneous-dependencies": "off",
 		"object-curly-newline": "off",
 		"react/jsx-no-bind": "off",
+		"import/first": "off",
+		"no-confusing-arrow": "off",
 		"object-curly-spacing" : 0,
 		"arrow-body-style": 0,
 		"no-console": 0,

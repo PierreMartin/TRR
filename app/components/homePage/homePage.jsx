@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import image from '@image/cat.jpg';
 import { typingCreateCourseAction, createCourseAction } from '../../actions/courses';
-import ModuleX from './moduleX/moduleX';
+import Input from './Input/Input';
 import CoursesList from './coursesList/coursesList';
 import { connect } from 'react-redux';
 
@@ -40,7 +40,7 @@ class HomePage extends React.Component {
 				<h1>Hello, world!</h1>
 				<img src={image} alt="cat" />
 
-				<ModuleX
+				<Input
 					placeholder="Write something here"
 					handleChangeMessage={this.handleChangeMessage}
 					handleSubmitMessage={this.handleSubmitMessage}
@@ -67,7 +67,6 @@ HomePage.propTypes = {
 */
 
 // TODO verifier pourquoi XxxXxxAction est imbriqué dans this.props
-// TODO mettre les logs redux
 
 HomePage.propTypes = {
 	courses: PropTypes.arrayOf.isRequired,

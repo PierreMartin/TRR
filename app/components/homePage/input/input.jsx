@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ModuleX = ({ placeholder, handleChangeMessage, handleSubmitMessage, value }) => (
+const Input = ({ placeholder, handleChangeMessage, handleSubmitMessage, value }) => (
 	<div>
 		<input
 			type="text"
@@ -13,11 +13,11 @@ const ModuleX = ({ placeholder, handleChangeMessage, handleSubmitMessage, value 
 	</div>
 );
 
-ModuleX.propTypes = {
+Input.propTypes = {
 	placeholder: PropTypes.string.isRequired,
 	handleChangeMessage: PropTypes.func.isRequired,
 	handleSubmitMessage: PropTypes.func.isRequired,
 	value: PropTypes.string.isRequired
 };
 
-export default ModuleX;
+export default Input;

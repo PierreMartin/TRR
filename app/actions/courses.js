@@ -1,8 +1,9 @@
-import request from 'axios';
+import axios from 'axios';
 import * as types from '@types';
 
 export function makeCourseRequest(method, id, data, api = '/api/course') {
-	return request[method](api + (id ? ('/' + id) : ''), data);
+	// return axios.post('/api/course/id_123',  { data };
+	return axios[method](api + (id ? ('/' + id) : ''), data);
 }
 
 /************************ Create courses ***********************/

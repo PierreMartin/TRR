@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import image from '@image/cat.jpg';
 import { typingCreateCourseAction, createCourseAction } from '../../actions/courses';
 import ModuleX from './moduleX/moduleX';
+import CoursesList from './coursesList/coursesList';
 import { connect } from 'react-redux';
 
 class HomePage extends React.Component {
@@ -13,35 +14,26 @@ class HomePage extends React.Component {
 	}
 
 	componentDidMount() {
-		const { courses, typingCreateCourseState } = this.props;
-		console.log(courses);
-		console.log(typingCreateCourseState);
-		// this.log('componentDidMount');
+		// ...
 	}
 
 	componentDidUpdate() {
-		this.log('componentDidUpdate');
+		// ...
 	}
 
 	handleChangeMessage(event) {
 		this.props.typingCreateCourseAction(event.target.value);
-		this.log('handleChangeMessage');
 	}
 
 	handleSubmitMessage(event) {
 		if (event.which === 13) {
 			event.preventDefault();
 			this.props.createCourseAction(event.target.value.trim());
-			this.log('handleSubmitMessage');
 		}
 	}
 
-	log(componant) {
-		console.log(componant, this.props);
-	}
-
 	render() {
-		const { typingCreateCourseState } = this.props;
+		const { typingCreateCourseState, courses } = this.props;
 
 		return (
 			<div>
@@ -54,7 +46,8 @@ class HomePage extends React.Component {
 					handleSubmitMessage={this.handleSubmitMessage}
 					value={typingCreateCourseState}
 				/>
-				<p>{ typingCreateCourseState }</p>
+
+				<CoursesList courses={courses} />
 
 			</div>
 		);

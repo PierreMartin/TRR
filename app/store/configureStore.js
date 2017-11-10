@@ -5,10 +5,11 @@ import rootReducer from '../reducers';
 const configureStore = (preloadedState) => {
 	const middleware = [thunk];
 
-	if (process.env.NODE_ENV === 'dev') {
+	// TODO remettre la condition une fois le fichier .env créé
+	// if (process.env.NODE_ENV === 'dev') {
 		const { logger } = require('redux-logger');
 		middleware.push(logger);
-	}
+	//}
 
 	const store = createStore(
 		rootReducer,

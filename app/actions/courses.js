@@ -30,7 +30,7 @@ export function createCourseFailure(data) {
 	};
 }
 
-export function createCours(text) {
+export function createCoursAction(text) {
 	return (dispatch, getState) => {
 		if (text.trim().length <= 0) return;
 

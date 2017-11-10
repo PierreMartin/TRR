@@ -24,14 +24,14 @@ class HomePage extends React.Component {
 	}
 
 	handleChangeMessage(event) {
-		typingCreateCourseAction(event.target.value.trim());
+		this.props.typingCreateCourseAction(event.target.value);
 		this.log('handleChangeMessage');
 	}
 
 	handleSubmitMessage(event) {
 		if (event.which === 13) {
 			event.preventDefault();
-			createCourseAction(event.target.value.trim());
+			this.props.createCourseAction(event.target.value.trim());
 			this.log('handleSubmitMessage');
 		}
 	}
@@ -73,13 +73,14 @@ HomePage.propTypes = {
 };
 */
 
+// TODO verifier pourquoi XxxXxxAction est imbriqué dans this.props
 // TODO mettre les logs redux
 
 HomePage.propTypes = {
 	courses: PropTypes.arrayOf.isRequired,
 	typingCreateCourseAction: PropTypes.func.isRequired,
 	typingCreateCourseState: PropTypes.string.isRequired,
-	createCourseAction: PropTypes.func,
+	createCourseAction: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -89,4 +90,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, null)(HomePage);
+export default connect(mapStateToProps, { typingCreateCourseAction, createCourseAction })(HomePage);

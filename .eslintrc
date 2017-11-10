@@ -36,6 +36,7 @@
 		"import/first": "off",
 		"no-confusing-arrow": "off",
 		"import/extensions": "off",
+		"spaced-comment": "off",
 		"object-curly-spacing" : 0,
 		"arrow-body-style": 0,
 		"no-console": 0,

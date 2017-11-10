@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import image from '@image/cat.jpg';
-import { typingCreateCourseAction, createCoursAction } from '../../actions/courses';
+import { typingCreateCourseAction, createCourseAction } from '../../actions/courses';
 import ModuleX from './moduleX/moduleX';
 import { connect } from 'react-redux';
 
@@ -30,7 +30,7 @@ class HomePage extends React.Component {
 	handleSubmitMessage(event) {
 		if (event.which === 13) {
 			event.preventDefault();
-			createCoursAction(event.target.value.trim());
+			createCourseAction(event.target.value.trim());
 			this.log('handleSubmitMessage');
 		}
 	}

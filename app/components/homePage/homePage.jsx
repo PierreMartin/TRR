@@ -13,8 +13,9 @@ class HomePage extends React.Component {
 	}
 
 	componentDidMount() {
-		const { courses } = this.props;
+		const { courses, typingCreateCourseState } = this.props;
 		console.log(courses);
+		console.log(typingCreateCourseState);
 		// this.log('componentDidMount');
 	}
 
@@ -40,6 +41,8 @@ class HomePage extends React.Component {
 	}
 
 	render() {
+		const { typingCreateCourseState } = this.props;
+
 		return (
 			<div>
 				<h1>Hello, world!</h1>
@@ -49,9 +52,9 @@ class HomePage extends React.Component {
 					placeholder="Write something here"
 					handleChangeMessage={this.handleChangeMessage}
 					handleSubmitMessage={this.handleSubmitMessage}
-					value={this.props.textChange}
+					value={typingCreateCourseState}
 				/>
-				<p>{ this.props.text }</p>
+				<p>{ typingCreateCourseState }</p>
 
 			</div>
 		);
@@ -73,14 +76,16 @@ HomePage.propTypes = {
 // TODO mettre les logs redux
 
 HomePage.propTypes = {
-	courses: PropTypes.arrayOf.isRequired
+	courses: PropTypes.arrayOf.isRequired,
+	typingCreateCourseAction: PropTypes.func.isRequired,
+	typingCreateCourseState: PropTypes.string.isRequired,
+	createCourseAction: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
 	return {
-		courses: state.courses.coursesList,
-		textChange: state.courses.textChange,
-		text: state.courses.text,
+		courses: state.courses.courses,
+		typingCreateCourseState: state.courses.typingCreateCourseState
 	};
 };
 

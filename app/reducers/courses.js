@@ -32,7 +32,7 @@ const courses = (state = [], action) => {
 };
 
 
-const typingCreateCourState = (state = '', action) => {
+const typingCreateCourseState = (state = '', action) => {
 	switch (action.type) {
 		case types.TYPING_CREATE_COUR_ACTION:
 			return action.typingCurrentValue;
@@ -45,7 +45,7 @@ const typingCreateCourState = (state = '', action) => {
 
 const courseReducer = combineReducers({
 	courses,
-	typingCreateCourState
+	typingCreateCourseState
 });
 
 export default courseReducer;

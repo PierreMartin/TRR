@@ -109,7 +109,7 @@ const config = {
     alias: {
       '@css': path.resolve('./app/css/'),
       '@image': path.resolve('./app/images/'),
-      // ...
+      '@types': path.resolve('./app/types/')
     }
   },
 

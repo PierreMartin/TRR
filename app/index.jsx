@@ -6,18 +6,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import todoApp from './reducers';
+import configureStore from './store/configureStore';
 
-const store = createStore(todoApp);
 
-// Without routing :
-/*
-ReactDOM.render(
-  <AppDemo />,
-  document.getElementById('root')
-);
-*/
+const preloadedState = window.__PRELOADED_STATE__;
+const store = configureStore(preloadedState);
+const rootElement = document.getElementById('root');
 
 // With routing :
 ReactDOM.render(
@@ -26,7 +20,7 @@ ReactDOM.render(
 			<App />
 		</Router>
 	</Provider>,
-	document.getElementById('root')
+	rootElement
 );
 
 

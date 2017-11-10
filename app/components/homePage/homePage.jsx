@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import image from '@image/cat.jpg';
+import { typingCreateCourseAction, createCours } from '../../actions/courses';
 import ModuleX from './moduleX/moduleX';
 import { connect } from 'react-redux';
 
@@ -9,11 +10,6 @@ class HomePage extends React.Component {
 		super(props);
 		this.handleChangeMessage = this.handleChangeMessage.bind(this);
 		this.handleSubmitMessage = this.handleSubmitMessage.bind(this);
-
-		this.state = {
-			textChange: '',
-			text: ''
-		};
 	}
 
 	componentDidMount() {
@@ -27,24 +23,20 @@ class HomePage extends React.Component {
 	}
 
 	handleChangeMessage(event) {
-		const textChange = event.target.value;
-		this.setState({ textChange });
+		typingCreateCourseAction(event.target.value.trim());
 		this.log('handleChangeMessage');
 	}
 
 	handleSubmitMessage(event) {
 		if (event.which === 13) {
 			event.preventDefault();
-
-			const text = event.target.value.trim();
-			this.setState({ text });
-			this.setState({ textChange: '' });
+			createCours(event.target.value.trim());
 			this.log('handleSubmitMessage');
 		}
 	}
 
 	log(componant) {
-		console.log(componant, this.state);
+		console.log(componant, this.props);
 	}
 
 	render() {
@@ -57,9 +49,9 @@ class HomePage extends React.Component {
 					placeholder="Write something here"
 					handleChangeMessage={this.handleChangeMessage}
 					handleSubmitMessage={this.handleSubmitMessage}
-					value={this.state.textChange}
+					value={this.props.textChange}
 				/>
-				<p>{ this.state.text }</p>
+				<p>{ this.props.text }</p>
 
 			</div>
 		);
@@ -78,13 +70,17 @@ HomePage.propTypes = {
 };
 */
 
+// TODO mettre les logs redux
+
 HomePage.propTypes = {
 	courses: PropTypes.arrayOf.isRequired
 };
 
 const mapStateToProps = (state) => {
 	return {
-		courses: state.courses
+		courses: state.courses.coursesList,
+		textChange: state.courses.textChange,
+		text: state.courses.text,
 	};
 };
 

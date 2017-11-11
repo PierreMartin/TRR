@@ -1,5 +1,5 @@
 import * as types from '@types';
-import { fetchCoursesRequest, createCourseRequest, getMarketsRequest } from './../api';
+import { fetchCoursesRequest, createCourseRequest, getFilmsRequest } from './../api';
 
 /************************ Fetch ***********************/
 export function fetchCourseSuccess(data) {
@@ -74,11 +74,11 @@ export function createCourseAction(text) {
 }
 
 /************************ Fetch to third API (should be in other file's action) ***********************/
-export function fetchMarketsAction() {
+export function fetchFilmsAction() {
 	return () => {
-		getMarketsRequest()
+		getFilmsRequest()
 			.then((res) => {
-				console.log(res);
+				console.log(res.data);
 			})
 			.catch((err) => {
 				console.error(err);

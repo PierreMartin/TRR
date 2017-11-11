@@ -2,10 +2,10 @@ import restApiClient from './../middlewares/restApiClient';
 
 export function api() {
 	const localhostUrl = 'http://localhost:3000';
-	const bittrexUrl = 'https://bittrex.com';
+	const swapiUrl = 'https://swapi.co';
 
 	const localClient = restApiClient().withConfig({ baseURL: localhostUrl });
-	const bittrexClient = restApiClient().withConfig({ baseURL: bittrexUrl });
+	const swapiClient = restApiClient().withConfig({ baseURL: swapiUrl });
 
 	return {
 		// Courses :
@@ -32,10 +32,10 @@ export function api() {
 			data
 		}),
 
-		// Market Bittrex (example with Bittrex) :
-		getMarkets: () => bittrexClient.request({
+		// Films (example with swapi API) :
+		getFilms: () => swapiClient.request({
 			method: 'GET',
-			url: '/api/v1.1/public/getmarkets'
+			url: '/api/films/1/'
 		})
 	};
 }

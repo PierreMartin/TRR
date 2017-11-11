@@ -33,8 +33,8 @@ export const createCourseRequest = (data) => {
 };
 
 /********************************************** Market Bittrex ***********************************************/
-export const getMarketsRequest = () => {
-	return api().getMarkets()
+export const getFilmsRequest = () => {
+	return api().getFilms()
 		.then((res) => {
 			if (res.status === 200) return Promise.resolve(res);
 		})

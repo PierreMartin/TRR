@@ -44,7 +44,7 @@ export function createCourseAction(text) {
 
 		// request :
 		return makeCourseRequest('post', id, data)
-			.then(res => {
+			.then((res) => {
 				if (res.status === 200) return dispatch(createCourseSuccess(data));
 			})
 			.catch(() => {

@@ -6,8 +6,9 @@ const CoursesList = ({ courses }) => {
 		coursesNode = courses.map((course, key) => {
 			return (
 				<li key={key}>
-					<span>text={course.text}</span>
-					<span>count={course.count}</span>
+					<span>text={course.title}</span>
+					<span>count={course.description}</span>
+					<span>count={course.price}</span>
 				</li>
 			);
 		});
@@ -15,7 +16,7 @@ const CoursesList = ({ courses }) => {
 
 	return (
 		<div>
-			<h3>List of course :</h3>
+			<h3>List of courses :</h3>
 
 			<ul>
 				{coursesNode}

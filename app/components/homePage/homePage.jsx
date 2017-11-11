@@ -66,7 +66,8 @@ HomePage.propTypes = {
 };
 */
 
-// TODO verifier pourquoi XxxXxxAction est imbriqué dans this.props
+// TODO gerer le fetch (api/)
+// TODO gerer variables env pour configureStore
 
 HomePage.propTypes = {
 	courses: PropTypes.arrayOf.isRequired,

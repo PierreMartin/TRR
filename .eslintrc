@@ -37,6 +37,8 @@
 		"no-confusing-arrow": "off",
 		"import/extensions": "off",
 		"spaced-comment": "off",
+		"consistent-return": "off",
+		"react/no-array-index-key": "off",
 		"object-curly-spacing" : 0,
 		"arrow-body-style": 0,
 		"no-console": 0,

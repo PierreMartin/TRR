@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import image from '@image/cat.jpg';
-import { typingCreateCourseAction, createCourseAction } from '../../actions/courses';
+import { typingCreateCourseAction, createCourseAction, fetchCoursesAction } from '../../actions/courses';
 import Input from './Input/Input';
 import CoursesList from './coursesList/coursesList';
 import { connect } from 'react-redux';
@@ -14,7 +14,7 @@ class HomePage extends React.Component {
 	}
 
 	componentDidMount() {
-		// ...
+		this.props.fetchCoursesAction();
 	}
 
 	componentDidUpdate() {
@@ -66,7 +66,6 @@ HomePage.propTypes = {
 };
 */
 
-// TODO gerer le fetch (api/)
 // TODO gerer variables env pour configureStore
 
 HomePage.propTypes = {
@@ -83,4 +82,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, { typingCreateCourseAction, createCourseAction })(HomePage);
+export default connect(mapStateToProps, { typingCreateCourseAction, createCourseAction, fetchCoursesAction })(HomePage);

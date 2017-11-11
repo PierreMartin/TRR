@@ -6,9 +6,10 @@ const CoursesList = ({ courses }) => {
 		coursesNode = courses.map((course, key) => {
 			return (
 				<li key={key}>
-					<span>text={course.title}</span>
-					<span>count={course.description}</span>
-					<span>count={course.price}</span>
+					<div><strong>Title: {course.title}</strong></div>
+					<div>Description: {course.description}</div>
+					<div>Price: {course.price}</div>
+					<hr />
 				</li>
 			);
 		});

@@ -1,6 +1,33 @@
+import { api } from './services';
 import courses from './courses.json';
 
-export const fetchCourses = () => {
-	// In the case of a real world API call, you'll normally run into a Promise like this:
-	// API.getUser().then(user => callback(user))
+/********************************************** COURSE ***********************************************/
+export const fetchCoursesRequest = () => {
+	return api().getCourses()
+		.then((res) => {
+			if (res.status === 200) return Promise.resolve(res);
+		})
+		.catch((err) => {
+			return Promise.reject(courses); // set 'err' as parameter in real world
+		});
+};
+
+export const fetchCourseRequest = (id) => {
+	return api().getCourseById(id)
+		.then((res) => {
+			if (res.status === 200) return Promise.resolve(res);
+		})
+		.catch((err) => {
+			return Promise.reject(err);
+		});
+};
+
+export const createCourseRequest = (data) => {
+	return api().createCourse(data)
+		.then((res) => {
+			if (res.status === 200) return Promise.resolve(res);
+		})
+		.catch((err) => {
+			return Promise.reject(err);
+		});
 };

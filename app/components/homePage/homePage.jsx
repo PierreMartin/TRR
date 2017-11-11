@@ -72,7 +72,8 @@ HomePage.propTypes = {
 	courses: PropTypes.arrayOf.isRequired,
 	typingCreateCourseAction: PropTypes.func.isRequired,
 	typingCreateCourseState: PropTypes.string.isRequired,
-	createCourseAction: PropTypes.func.isRequired
+	createCourseAction: PropTypes.func.isRequired,
+	fetchCoursesAction: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {

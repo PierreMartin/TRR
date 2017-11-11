@@ -1,7 +1,7 @@
 import { api } from './services';
 import courses from './courses.json';
 
-/********************************************** COURSE ***********************************************/
+/********************************************** Courses ***********************************************/
 export const fetchCoursesRequest = () => {
 	return api().getCourses()
 		.then((res) => {
@@ -24,6 +24,17 @@ export const fetchCourseRequest = (id) => {
 
 export const createCourseRequest = (data) => {
 	return api().createCourse(data)
+		.then((res) => {
+			if (res.status === 200) return Promise.resolve(res);
+		})
+		.catch((err) => {
+			return Promise.reject(err);
+		});
+};
+
+/********************************************** Market Bittrex ***********************************************/
+export const getMarketsRequest = () => {
+	return api().getMarkets()
 		.then((res) => {
 			if (res.status === 200) return Promise.resolve(res);
 		})

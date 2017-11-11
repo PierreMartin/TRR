@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import * as types from '@types';
 
-const course = (state = {}, action) => {
+const addCourse = (state = {}, action) => {
 	switch (action.type) {
 		case types.CREATE_COURSE_SUCCESS:
 			return {
@@ -18,15 +18,13 @@ const course = (state = {}, action) => {
 const courses = (state = [], action) => {
 	switch (action.type) {
 		case types.GET_COURSES_SUCCESS:
-		case types.GET_COURSES_FAILURE:
 			if (action.data) return action.data;
 			return state;
-		/*
 		case types.GET_COURSES_FAILURE:
+			if (action.data) return action.data; // I add 'data' just for example
 			return state;
-		*/
 		case types.CREATE_COURSE_SUCCESS:
-			return [...state, course(undefined, action)];
+			return [...state, addCourse(undefined, action)];
 		case types.CREATE_COURSE_FAILURE:
 			return state.filter(t => t.id !== action.id);
 		default:

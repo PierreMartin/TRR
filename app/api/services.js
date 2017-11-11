@@ -17,6 +17,11 @@ export function api() {
 			method: 'GET',
 			url: '/api/getcourse/' + id
 		}),
+		createCourse: data => localClient.request({
+			method: 'POST',
+			url: '/api/addcourse/' + data.id,
+			data
+		}),
 		deleteCourse: id => localClient.request({
 			method: 'DELETE',
 			url: '/api/course/' + id
@@ -26,15 +31,10 @@ export function api() {
 			url: '/api/course/' + id,
 			data
 		}),
-		createCourse: data => localClient.request({
-			method: 'POST',
-			url: '/api/addcourse/' + data.id,
-			data
-		}),
 
 		// Market Bittrex (example with Bittrex) :
 		getMarkets: () => bittrexClient.request({
-			method: 'POST',
+			method: 'GET',
 			url: '/api/v1.1/public/getmarkets'
 		})
 	};

@@ -1,5 +1,5 @@
 import * as types from '@types';
-import { fetchCoursesRequest, createCourseRequest } from './../api';
+import { fetchCoursesRequest, createCourseRequest, getMarketsRequest } from './../api';
 
 /************************ Fetch ***********************/
 export function fetchCourseSuccess(data) {
@@ -69,6 +69,19 @@ export function createCourseAction(text) {
 			})
 			.catch((err) => {
 				if (err.message) return dispatch(createCourseFailure({id, error: 'Something went wrong'}));
+			});
+	};
+}
+
+/************************ Fetch to third API ***********************/
+export function fetchMarketsAction() {
+	return () => {
+		getMarketsRequest()
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => {
+				console.error(err);
 			});
 	};
 }

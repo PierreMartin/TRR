@@ -73,7 +73,7 @@ export function createCourseAction(text) {
 	};
 }
 
-/************************ Fetch to third API ***********************/
+/************************ Fetch to third API (should be in other file's action) ***********************/
 export function fetchMarketsAction() {
 	return () => {
 		getMarketsRequest()

@@ -64,7 +64,7 @@ const renderFullPage = (html, preloadedState) => {
         <title>Redux Universal Example</title>
       </head>
       <body>
-        <div id="app">${html}</div>
+        <div id="root">${html}</div>
         <script>
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\x3c')}
         </script>

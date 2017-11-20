@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import image from '@image/cat.jpg';
+import image from './../../images/cat.jpg';
 import { typingCreateCourseAction, createCourseAction, fetchCoursesAction } from '../../actions/courses';
 import Input from './Input/Input';
 import CoursesList from './coursesList/coursesList';
